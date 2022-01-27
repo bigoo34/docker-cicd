@@ -14,7 +14,7 @@ node {
      }
    }
    stage('docker build/push') {
-     docker.withRegistry('https://index.docker.io/v1/', 'bigoo') {
+     docker.withRegistry('https://index.docker.io/v1/', 'docker-hub') {
        def app = docker.build("bigoo/docker-nodejs-demo:${commit_id}", '.').push()
      }
    }
